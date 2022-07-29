@@ -1,0 +1,86 @@
+<!-- navbarstarts here -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="../../../assets/figma-1.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+      Brand name
+    </a>
+      <a class="nav-link" (click)="authService.SignOut()">
+        <fa-icon [icon]="faSignOut"></fa-icon>LogOut
+      </a>
+  </div>
+</nav>
+    <!-- navbar ends here -->
+
+    <!-- todo add form start with validation -->
+    <!-- using template driven form and validation -->
+<div class="row">
+  <div class="col-sm-6" >
+    <h2>TODO</h2>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    <br>
+    <form #f="ngForm" (ngSubmit)="f.form.valid && onSubmit(f)">
+      <div class="form-group">
+        <input type="text" class="form-control " name="title" id="formGroupExampleInput" placeholder="Title" ngModel required #title = 'ngModel' [ngClass]="{'border-danger': f.submitted && title.invalid}">
+      </div>
+      <br>
+      <div class="form-group">
+        <input type="text" class="form-control" name="description" id="formGroupExampleInput2" placeholder="Description" ngModel required #description = 'ngModel' [ngClass]="{'border-danger': f.submitted && description.invalid}">
+      </div>
+      <br>
+      <button type="submit" class="add">Add</button>
+   
+<div class="text-danger ml-3" *ngIf= 'f.submitted && title.invalid && title.errors || f.submitted && description.invalid && description.errors'>
+  Field is required
+</div>
+    </form>
+  </div>
+<!-- Todo form ends  -->
+
+<!-- todo list page -->
+
+<!-- search bar -->
+  <div class="col-sm-6" >
+    <nav class="navbar bg-light">
+      <div class="container">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+  <!-- Search bar ends  -->
+
+<!-- dropdown for filter -->
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Filter by
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" >Completed</a></li>
+            <li><a class="dropdown-item" >Favourite</a></li>
+            <li><a class="dropdown-item" >Deleted</a></li>
+          </ul>
+        </div>
+        </div>
+    </nav>
+    <hr>
+
+    <!--todo list display functionality calling *ngFor directive  -->
+    <div class="main">
+
+      <h1>My To Do List</h1>
+      <h2>What would you like to do today?</h2>
+      <tbody>
+     
+      
+        </div>
+      </div>
+    
+    </div>
+
+  
+
+
+
+
+
+       
